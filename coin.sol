@@ -29,7 +29,7 @@ contract Coin {
     // 从任何调用者那里发送一定数量的代币到一个地址
     function send(address receiver, uint amount) public {
         if (amount > balances[receiver]) {
-            revert InsucessBalance({
+            revert InsufficientBalance({
                 requested: amount,
                 available: balances[msg.sender]
             });
